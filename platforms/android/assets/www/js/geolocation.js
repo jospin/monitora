@@ -7,7 +7,6 @@ var Geo = function() {
                         html += '<p><strong>Latitude: </strong> ' + position.coords.latitude + ' </p>';
                         html += '<p><strong>Longitude: </strong> ' + position.coords.longitude + ' </p>';
                     $('.ui-content div').append(html);
-                    console.log(position);
                 },
                 function(error){ //error
                     console.error('Erro de geolocalização' + error.message);

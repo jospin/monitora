@@ -1,5 +1,5 @@
 var app = {
-    
+
     init: function() {
         this.bindEvents();
     },
@@ -10,8 +10,21 @@ var app = {
 
     onDeviceReady: function() {
         app.loadTitle();
-        app.geolocation();
+        app.monitora();
+        //app.geolocation();
         // app.receiv'edEvent('deviceready');
+    },
+
+    monitora: function() {
+        $.getScript( "js/monitora.js", function(data, textStatus, jqxhr ) {
+            if (jqxhr.status == 200) {
+                var monitora = new Mon();
+                return monitora;
+            } else {
+                console.error('Nao carregou');
+                throw new Error("geolocation.js não foi carregado");
+            }
+        });
     },
 
     geolocation: function() {
