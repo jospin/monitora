@@ -40,7 +40,7 @@ var app = {
     },
 
     loadTitle: function() {
-        $('.app-header h1').append('Monitoramento');
+        $('.tite').append('Monitoramento');
     },
 };
 
