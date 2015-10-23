@@ -40,7 +40,7 @@ var app = {
     },
 
     loadTitle: function() {
-        $('.tite').append('Monitoramento');
+        $('.container-fluid .tite').append('Monitoramento');
     },
 };
 
