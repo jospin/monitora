@@ -1,8 +1,8 @@
 var Mon = function() {
     var monitora = {
         init: function() {
-            url = 'http://monitora.local/modulos/mon/iso/list.php',
-            $('.container-fluid .content').load('view/monitora.htm > *', function(){
+            var url = 'http://labs.mt4.com.br/~ljospin/back-monitora/modulos/mon/iso/list.php';
+            $('.content').load('view/monitora.htm > *', function(status) {
                 $.ajax({
                     url: url,
                     dataType: 'json',
@@ -21,7 +21,7 @@ var Mon = function() {
                                 cssClass = 'panel-warning';
                             }
                             htmlString += cssClass + '">' + "\r\n";
-                            htmlString += '<div class="panel-heading">Sistema: '  + item['menssage'] +'</div>' + "\r\n";
+                            htmlString += '<div class="panel-heading">Sistema: '  + item['sistem'] +'</div>' + "\r\n";
                             htmlString += '<div class="panel-body">' + "\r\n";
                             htmlString += item['menssage'];
                             htmlString += '</div>'+ "\r\n";
