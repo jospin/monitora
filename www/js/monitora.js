@@ -30,13 +30,13 @@ var Mon = function() {
                         $('.content-panel').replaceWith(htmlString)
                     },
                     error: function(erro, status, errorThrow) {
-                        alert('Erro na requisição');
+                        alert('Erro na requisição de listagem');
                     }
 
                 });
 
             });
-        },
+        }
     }
     monitora.init();
     return monitora;

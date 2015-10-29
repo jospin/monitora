@@ -10,7 +10,8 @@ var app = {
 
     onDeviceReady: function() {
         app.loadTitle();
-        app.monitora();
+        app.loadNotification();
+        //app.monitora();
         //app.geolocation();
         // app.receiv'edEvent('deviceready');
     },
@@ -42,6 +43,19 @@ var app = {
     loadTitle: function() {
         $('.container-fluid .tite').append('Monitoramento');
     },
+
+    loadNotification: function() {
+        $.getScript( "js/notification.js", function(data, textStatus, jqxhr ) {
+            if (jqxhr.status == 200) {
+                var notifica = new Not();
+                return notifica;
+            } else {
+                console.error('Nao carregou notificação');
+                throw new Error("notification.js não foi carregado");
+            }
+        });
+
+    }
 };
 
 if(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)){
