@@ -11,8 +11,8 @@ var app = {
     onDeviceReady: function() {
         app.loadTitle();
         app.loadNotification();
-        //app.monitora();
-        //app.geolocation();
+        // app.monitora();
+        // app.geolocation();
         // app.receiv'edEvent('deviceready');
     },
 
@@ -22,7 +22,6 @@ var app = {
                 var monitora = new Mon();
                 return monitora;
             } else {
-                console.error('Nao carregou');
                 throw new Error("geolocation.js não foi carregado");
             }
         });
@@ -41,7 +40,7 @@ var app = {
     },
 
     loadTitle: function() {
-        $('.container-fluid .tite').append('Monitoramento');
+        $('.container-fluid .header .title').append('Monitoramento');
     },
 
     loadNotification: function() {
