@@ -1,0 +1,26 @@
+keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+Alias name: androiddebugkey
+Creation date: Dec 16, 2014
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=Android Debug, O=Android, C=US
+Issuer: CN=Android Debug, O=Android, C=US
+Serial number: 491a97d9
+Valid from: Tue Dec 16 15:54:08 BRST 2014 until: Thu Dec 08 15:54:08 BRST 2044
+Certificate fingerprints:
+     MD5:  DB:80:52:3F:7C:54:41:2A:B7:2B:FD:DF:8C:A2:FC:CB
+     SHA1: 32:79:DF:4B:73:72:A4:A6:DF:2E:DC:BB:A9:15:59:EE:85:55:3C:8C
+     SHA256: DA:BF:4A:49:C7:2E:8F:D3:B2:42:36:44:9E:DB:3B:FF:71:01:CC:F1:23:0D:96:83:A5:57:C1:30:99:0F:84:84
+     Signature algorithm name: SHA256withRSA
+     Version: 3
+
+Extensions:
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 47 3F D9 BC D8 68 EB 91   DB 28 F4 05 D5 75 73 B6  G?...h...(...us.
+0010: 02 E5 FD F9                                        ....
+]
+]

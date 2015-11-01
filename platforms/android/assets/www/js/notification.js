@@ -35,7 +35,7 @@ var Not = function() {
                         alert('Erro na requisição de notificação');
                     }
 
-                }),
+                })
             //3000);
         },
         vibration: function() {

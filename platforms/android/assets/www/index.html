@@ -1,25 +1,71 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Teste</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="plugin/Bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="plugin/Bootstrap/css/bootstrap-theme.min.css">
-    <script src="plugin/jQuery/jquery-2.1.4.min.js"></script>
+<html pt-br>
+    <head>
+        <meta charset="UTF-8">
+        <title>Teste</title>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <script src="plugin/jQuery/jquery-2.1.4.min.js"></script>        
+        <link rel="stylesheet" href="plugin/Bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="plugin/Bootstrap/css/bootstrap-theme.min.css">
+        
     </head>
-    <div class="container-fluid">
-        <div class="row header">
-            <h1 class="title col-md-12"></h1>
+    <body>
+        <div class="container-fluid">
+            <div class="row header">
+                <div class="col-md-12">
+                    <a href="javascript:void(0)" class="logo" >
+                        <img src="img/mt4.png" height="17" width="16" />
+                    </a>
+                    <!--
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="navbar-header">
+                            <span class="glyphicon glyphicon-menu-hamburger navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></span>
+                        </div>
+                    </nav>
+                    -->
+                    <ul class="nav nav-pills">
+                        <li role="presentation" id="li-index" class="active">
+                            <a href="javascript:void(0)" id="index">Painel</a>
+                        </li>
+                        <li role="presentation" id="li-geolocation">
+                            <a href="javascript:void(0)" id="geolocation">Localização</a>
+                        </li>
+                        <li role="presentation" id="li-photo">
+                            <a href="javascript:void(0)" id="photo">Foto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row header2">
+                <h4 class="title col-md-12"></h4>
+            </div>
+            <!-- Menu colapse -->
+            <!--
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="navbar-collapse collapse">
+                        <a class="navbar-brand" id="localizacao" href="javascript:void(0)">
+                            <span alt="Localização" class="glyphicon glyphicon-road"></span>&nbsp; &nbsp;Localização
+                        </a>
+                        <a class="navbar-brand" id="photo" href="javascript:void(0)">
+                            <span alt="Localização" class="glyphicon glyphicon-picture"></span>&nbsp; &nbsp;Foto
+                        </a>                        
+                    </div>
+                </div>
+            </div>
+            -->
+            <div class="row content">
+            </div>
+            <div class="row footer">
+                <h4 class="title">Footer content</h4>
+            </div>
         </div>
-        <div class="row content">
-        </div>
-        <div class="row footer">
-            <h4 class="title">Footer content</h4>
-        </div>
-    </div>
-    <script src="plugin/Bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>
-    <link rel="stylesheet" href="css/app.css" />
-<body>
+        <script src="plugin/Bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+        <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu3V-zzPJ5uy7Dk03VeJfknbjVdKlC5N0&language=pt_BR"></script>-->
+        <script type="text/javascript" src="cordova.js"></script>
+        <link rel="stylesheet" href="css/app.css" />
+    </body>
+</html>

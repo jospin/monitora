@@ -10,9 +10,10 @@ var Mon = function() {
                     method: 'POST',
                     crossDomain: true,
                     complete: function(data, status) {
-                        var cssClass = 'panel-success';
+                        console.log(data);
                         var htmlString = '';
                         jQuery.each(data.responseJSON, function(index, item) {
+                            var cssClass = 'panel-success';
                             htmlString += '<div class="panel ';
                             if (item['alert'] == 'R') {
                                 cssClass = 'panel-danger';

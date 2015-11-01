@@ -10,9 +10,26 @@ var app = {
 
     onDeviceReady: function() {
         app.loadTitle();
+        app.statusBar
         app.loadNotification();
-        // app.monitora();
-        // app.geolocation();
+        app.monitora();
+        app.backButton();        
+        $('#geolocation').click(function(){
+            $('.nav-pills li').removeClass("active");
+            $('#li-geolocation').addClass('active');
+            app.geolocation();
+        });
+        $('#photo').click(function(){
+            $('.nav-pills li').removeClass("active");
+            $('#li-photo').addClass('active');
+            app.photo();
+        });
+        $('#index').click(function(){
+            $('.nav-pills li').removeClass("active");
+            $('#li-index').addClass('active');
+            app.monitora();
+        })
+        
         // app.receiv'edEvent('deviceready');
     },
 
@@ -22,16 +39,23 @@ var app = {
                 var monitora = new Mon();
                 return monitora;
             } else {
-                throw new Error("geolocation.js não foi carregado");
+                throw new Error("monitora.js não foi carregado");
             }
         });
+    },
+
+    statusBar: function() {    
+        StatusBar.backgroundColorByHexString('#2B2C31');
+        setTimeout(
+            function(){StatusBar.hide();}
+        ,10000);
     },
 
     geolocation: function() {
         $.getScript( "js/geolocation.js", function( data, textStatus, jqxhr ) {
             if (jqxhr.status == 200) {
-                var geolocation = new Geo();
-                return geolocation;
+                var geo = new Geo();
+                return geo;
             } else {
                 console.error('Nao carregou');
                 throw new Error("geolocation.js não foi carregado");
@@ -39,8 +63,40 @@ var app = {
         });
     },
 
+    photo: function() {
+        $.getScript( "js/photo.js", function( data, textStatus, jqxhr ) {
+            if (jqxhr.status == 200) {
+                var phot = new Photo();
+                return phot;
+            } else {
+                console.error('Nao carregou');
+                throw new Error("photo.js não foi carregado");
+            }
+        });        
+    },
+    
+    backButton: function(){
+        document.addEventListener('backbutton', function() {
+            // var activePage = $.mobile.activePage.attr('id');
+            // if (activePage !== 'page_inicial') {
+            //     navigator.app.backHistory();
+            // } else {
+                navigator.notification.confirm(
+                    "Realmente deseja sair?",
+                    function(buttonIndex) {
+                        if (buttonIndex === 1) {
+                            navigator.app.exitApp();
+                        }
+                    },
+                    "Sair",
+                    ["Sim","Nao"]
+                );              
+            // }
+        }, false);
+    },
+
     loadTitle: function() {
-        $('.container-fluid .header .title').append('Monitoramento');
+        $('.container-fluid .header2 .title').append('Monitoramento');
     },
 
     loadNotification: function() {
@@ -53,7 +109,6 @@ var app = {
                 throw new Error("notification.js não foi carregado");
             }
         });
-
     }
 };
 
